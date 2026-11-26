@@ -1,0 +1,612 @@
+{
+  "meta": {
+    "title": "Тест на визначення Топ-5 сильних сторін особистості",
+    "version": "1.0.0",
+    "language": "uk",
+    "totalQuestions": 60,
+    "scale": [
+      {
+        "value": 1,
+        "label": "Зовсім не про мене"
+      },
+      {
+        "value": 2,
+        "label": "Рідко про мене"
+      },
+      {
+        "value": 3,
+        "label": "Іноді / залежить від ситуації"
+      },
+      {
+        "value": 4,
+        "label": "Часто про мене"
+      },
+      {
+        "value": 5,
+        "label": "Абсолютно про мене"
+      }
+    ]
+  },
+  "domains": [
+    {
+      "id": "thinking",
+      "name": "Домен Мислення",
+      "color": "#4F46E5",
+      "secondaryColor": "#0D9488",
+      "bgLight": "#EEF2FF",
+      "borderLight": "#C7D2FE",
+      "description": "Як людина обробляє інформацію, аналізує світ та генерує рішення."
+    },
+    {
+      "id": "doing",
+      "name": "Домен Дії",
+      "color": "#D97706",
+      "secondaryColor": "#F59E0B",
+      "bgLight": "#FFFBEB",
+      "borderLight": "#FDE68A",
+      "description": "Як людина організовує процеси, тримає фокус та втілює задуми в реальність."
+    },
+    {
+      "id": "motivating",
+      "name": "Домен Впливу та Комунікації",
+      "color": "#059669",
+      "secondaryColor": "#10B981",
+      "bgLight": "#ECFDF5",
+      "borderLight": "#A7F3D0",
+      "description": "Як людина взаємодіє з іншими, передає сенси та веде за собою."
+    },
+    {
+      "id": "feeling",
+      "name": "Домен Емпатії та Цінностей",
+      "color": "#7C3AED",
+      "secondaryColor": "#8B5CF6",
+      "bgLight": "#F5F3FF",
+      "borderLight": "#DDD6FE",
+      "description": "Як людина будує довіру, відчуває інших та тримає внутрішню опору."
+    }
+  ],
+  "strengths": [
+    {
+      "id": "systems_architect",
+      "domainId": "thinking",
+      "name": "Архітектор систем (Системний аналітик)",
+      "shortDescription": "Ви бачите приховані взаємозв'язки між елементами та вмієте перетворювати хаос на зрозумілу, логічну структуру."
+    },
+    {
+      "id": "strategist",
+      "domainId": "thinking",
+      "name": "Стратег-візіонер",
+      "shortDescription": "Ви мислите на кілька кроків уперед, прораховуєте різні сценарії розвитку подій і знаходите оптимальний маршрут до мети."
+    },
+    {
+      "id": "ideator",
+      "domainId": "thinking",
+      "name": "Генератор ідей (Новатор)",
+      "shortDescription": "Ви легко створюєте нестандартні концепції, поєднуєте непоєднуване та заряджаєтесь від пошуку свіжих рішень."
+    },
+    {
+      "id": "researcher",
+      "domainId": "thinking",
+      "name": "Дослідник-ерудит",
+      "shortDescription": "Ви отримуєте задоволення від глибокого занурення в тему, збору фактів та постійного інтелектуального розвитку."
+    },
+    {
+      "id": "critical_thinker",
+      "domainId": "thinking",
+      "name": "Критичний мислитель (Діагност)",
+      "shortDescription": "Ви швидко виявляєте суперечності, слабкі місця в планах та вмієте відділити об'єктивні факти від емоцій."
+    },
+    {
+      "id": "time_keeper",
+      "domainId": "doing",
+      "name": "Хранитель порядку та часу",
+      "shortDescription": "Ви створюєте ритм, чіткі графіки та передбачуваність, завдяки чому процеси рухаються вчасно й без зайвого стресу."
+    },
+    {
+      "id": "executor",
+      "domainId": "doing",
+      "name": "Двигун реалізації (Виконавець)",
+      "shortDescription": "Ви перетворюєте ідеї на конкретні кроки й отримуєте щире задоволення від завершених справ і відчутного результату."
+    },
+    {
+      "id": "focus_master",
+      "domainId": "doing",
+      "name": "Майстер фокусу",
+      "shortDescription": "Ви здатні глибоко концентруватися на головному пріоритеті, відсікаючи інформаційний шум та другорядні відволікання."
+    },
+    {
+      "id": "adapter",
+      "domainId": "doing",
+      "name": "Гнучкий адаптер (Навігатор змін)",
+      "shortDescription": "Ви не губитеся в умовах невизначеності, легко перебудовуєтесь на ходу та знаходите ефективні рішення в моменті."
+    },
+    {
+      "id": "optimizer",
+      "domainId": "doing",
+      "name": "Оптимізатор (Перфекціоніст якості)",
+      "shortDescription": "Ви помічаєте дрібні деталі та знаєте, як удосконалити хороший продукт чи процес до найвищого рівня."
+    },
+    {
+      "id": "storyteller",
+      "domainId": "motivating",
+      "name": "Оповідач (Майстер сенсів)",
+      "shortDescription": "Ви вмієте пояснювати складні речі просто, образно та захопливо, перетворюючи факти на живі історії."
+    },
+    {
+      "id": "catalyst",
+      "domainId": "motivating",
+      "name": "Каталізатор (Ініціатор)",
+      "shortDescription": "Ви заряджаєте енергією старт нових справ, допомагаєте подолати інерцію та переводите обговорення у дію."
+    },
+    {
+      "id": "coordinator",
+      "domainId": "motivating",
+      "name": "Лідер-координатор",
+      "shortDescription": "Ви природно берете відповідальність у важливий момент, розподіляєте ролі та об'єднуєте людей навколо спільної цілі."
+    },
+    {
+      "id": "networker",
+      "domainId": "motivating",
+      "name": "Амбасадор зв'язків (Нетворкер)",
+      "shortDescription": "Ви легко знаходите спільну мову з різними людьми, будуєте мости між командами та розширюєте коло довіри."
+    },
+    {
+      "id": "mentor",
+      "domainId": "motivating",
+      "name": "Мотиватор-ментор",
+      "shortDescription": "Ви бачите прихований потенціал в інших людях, умієте підтримати їхній розвиток і допомогти повірити у власні сили."
+    },
+    {
+      "id": "empath",
+      "domainId": "feeling",
+      "name": "Емпат (Тонкий спостерігач)",
+      "shortDescription": "Ви глибоко відчуваєте емоційний стан та приховані потреби співрозмовників, створюючи атмосферу безпеки."
+    },
+    {
+      "id": "peacemaker",
+      "domainId": "feeling",
+      "name": "Миротворець (Медіатор)",
+      "shortDescription": "Ви вмієте згладжувати гострі кути, знаходити спільну мову в конфліктах та зберігати гармонію в колективі."
+    },
+    {
+      "id": "believer",
+      "domainId": "feeling",
+      "name": "Людина принципів (Ціннісний фундамент)",
+      "shortDescription": "Ви спираєтесь на внутрішній етичний компас і працюєте з максимальною віддачею там, де бачите чесність і користь."
+    },
+    {
+      "id": "anchor",
+      "domainId": "feeling",
+      "name": "Опора стабільності (Надійний партнер)",
+      "shortDescription": "Ви будуєте глибокі, віддані та довготривалі стосунки — людина, на слово якої завжди можна покластися."
+    },
+    {
+      "id": "optimist",
+      "domainId": "feeling",
+      "name": "Оптиміст-натхненник",
+      "shortDescription": "Ви приносите в команду життєстійкість, віру в позитивний результат і допомагаєте іншим не опускати руки."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "strengthId": "systems_architect",
+      "domainId": "thinking",
+      "marker": "energy",
+      "text": "Мені приємно наводити лад у хаосі та розкладати все по поличках."
+    },
+    {
+      "id": "Q16",
+      "strengthId": "time_keeper",
+      "domainId": "doing",
+      "marker": "energy",
+      "text": "Я почуваюся спокійно й впевнено, коли мій день або тиждень чітко розпланований."
+    },
+    {
+      "id": "Q31",
+      "strengthId": "storyteller",
+      "domainId": "motivating",
+      "marker": "energy",
+      "text": "Мені подобається пояснювати складні речі простими словами, через приклади чи історії."
+    },
+    {
+      "id": "Q46",
+      "strengthId": "empath",
+      "domainId": "feeling",
+      "marker": "energy",
+      "text": "Я тонко відчуваю настрій інших людей, навіть коли вони намагаються це приховати."
+    },
+    {
+      "id": "Q4",
+      "strengthId": "strategist",
+      "domainId": "thinking",
+      "marker": "energy",
+      "text": "Я люблю продумувати свої дії на кілька кроків уперед."
+    },
+    {
+      "id": "Q19",
+      "strengthId": "executor",
+      "domainId": "doing",
+      "marker": "energy",
+      "text": "Я отримую справжній кайф, коли ставлю галочку навпроти завершеної справи."
+    },
+    {
+      "id": "Q34",
+      "strengthId": "catalyst",
+      "domainId": "motivating",
+      "marker": "energy",
+      "text": "Мене заряджає момент старту, коли треба зрушити ідею з мертвої точки."
+    },
+    {
+      "id": "Q49",
+      "strengthId": "peacemaker",
+      "domainId": "feeling",
+      "marker": "energy",
+      "text": "Мені приємно допомагати людям порозумітися та знаходити спільне рішення у складних суперечках."
+    },
+    {
+      "id": "Q7",
+      "strengthId": "ideator",
+      "domainId": "thinking",
+      "marker": "energy",
+      "text": "Нові завдання, де треба придумати щось незвичне, додають мені сил."
+    },
+    {
+      "id": "Q22",
+      "strengthId": "focus_master",
+      "domainId": "doing",
+      "marker": "energy",
+      "text": "Мені легко повністю зануритися в одне важливе завдання і не відволікатися на дрібниці."
+    },
+    {
+      "id": "Q37",
+      "strengthId": "coordinator",
+      "domainId": "motivating",
+      "marker": "energy",
+      "text": "У незрозумілій ситуації я природно беру ініціативу в свої руки й організовую процес."
+    },
+    {
+      "id": "Q52",
+      "strengthId": "believer",
+      "domainId": "feeling",
+      "marker": "energy",
+      "text": "Я працюю з максимальною віддачею, коли щиро вірю в чесність та користь нашої справи."
+    },
+    {
+      "id": "Q10",
+      "strengthId": "researcher",
+      "domainId": "thinking",
+      "marker": "energy",
+      "text": "Мені щиро подобається вивчати нові теми та копати вглиб."
+    },
+    {
+      "id": "Q25",
+      "strengthId": "adapter",
+      "domainId": "doing",
+      "marker": "energy",
+      "text": "Коли все йде не за планом, я не панікую, а навіть відчуваю спортивний азарт."
+    },
+    {
+      "id": "Q40",
+      "strengthId": "networker",
+      "domainId": "motivating",
+      "marker": "energy",
+      "text": "Знайомства з новими людьми та живе спілкування дають мені заряд бадьорості."
+    },
+    {
+      "id": "Q55",
+      "strengthId": "anchor",
+      "domainId": "feeling",
+      "marker": "energy",
+      "text": "Для мене дуже важливо вибудовувати глибокі, чесні та довготривалі стосунки з людьми."
+    },
+    {
+      "id": "Q13",
+      "strengthId": "critical_thinker",
+      "domainId": "thinking",
+      "marker": "energy",
+      "text": "Я швидко помічаю помилки, нестиковки та слабкі місця в будь-якому плані."
+    },
+    {
+      "id": "Q28",
+      "strengthId": "optimizer",
+      "domainId": "doing",
+      "marker": "energy",
+      "text": "Мені приємно доводити хорошу роботу до блиску й покращувати дрібні деталі."
+    },
+    {
+      "id": "Q43",
+      "strengthId": "mentor",
+      "domainId": "motivating",
+      "marker": "energy",
+      "text": "Я щиро радію, коли бачу, як завдяки моїй підтримці чи пораді хтось починає рости."
+    },
+    {
+      "id": "Q58",
+      "strengthId": "optimist",
+      "domainId": "feeling",
+      "marker": "energy",
+      "text": "Я вмію знайти світлий бік і привід для надії навіть у непростих обставинах."
+    },
+    {
+      "id": "Q5",
+      "strengthId": "strategist",
+      "domainId": "thinking",
+      "marker": "action",
+      "text": "У мене майже завжди є план «Б» на випадок, якщо щось піде не так."
+    },
+    {
+      "id": "Q20",
+      "strengthId": "executor",
+      "domainId": "doing",
+      "marker": "action",
+      "text": "Замість довгих розмов про плани я волію швидше перейти до реальних дій."
+    },
+    {
+      "id": "Q35",
+      "strengthId": "catalyst",
+      "domainId": "motivating",
+      "marker": "action",
+      "text": "Якщо команда довго вагається, я зазвичай першим кажу: «Давайте просто спробуємо!»."
+    },
+    {
+      "id": "Q50",
+      "strengthId": "peacemaker",
+      "domainId": "feeling",
+      "marker": "action",
+      "text": "Коли в колективі назріває конфлікт, я природно згладжую гострі кути й повертаю спокійну атмосферу."
+    },
+    {
+      "id": "Q8",
+      "strengthId": "ideator",
+      "domainId": "thinking",
+      "marker": "action",
+      "text": "Мені легко поєднати дві звичайні ідеї, щоб вийшло щось круте й нове."
+    },
+    {
+      "id": "Q23",
+      "strengthId": "focus_master",
+      "domainId": "doing",
+      "marker": "action",
+      "text": "Я завжди спочатку визначаю головну ціль дня і не розпорошуюся на все підряд."
+    },
+    {
+      "id": "Q38",
+      "strengthId": "coordinator",
+      "domainId": "motivating",
+      "marker": "action",
+      "text": "Мені легко розподілити завдання між людьми так, щоб кожен робив те, що вміє найкраще."
+    },
+    {
+      "id": "Q53",
+      "strengthId": "believer",
+      "domainId": "feeling",
+      "marker": "action",
+      "text": "У складній ситуації я завжди спираюся на власні принципи, навіть якщо простіше було б піти на компроміс із совістю."
+    },
+    {
+      "id": "Q11",
+      "strengthId": "researcher",
+      "domainId": "thinking",
+      "marker": "action",
+      "text": "Якщо мене щось зацікавило, я перечитаю купу інформації, щоб розібратися до кінця."
+    },
+    {
+      "id": "Q26",
+      "strengthId": "adapter",
+      "domainId": "doing",
+      "marker": "action",
+      "text": "Я швидко підлаштовуюся під нові правила та знаходжу рішення прямо на ходу."
+    },
+    {
+      "id": "Q41",
+      "strengthId": "networker",
+      "domainId": "motivating",
+      "marker": "action",
+      "text": "Я легко знаходжу спільну мову з дуже різними людьми й часто знайомлю їх між собою."
+    },
+    {
+      "id": "Q56",
+      "strengthId": "anchor",
+      "domainId": "feeling",
+      "marker": "action",
+      "text": "Якщо я щось пообіцяв, то обов'язково виконаю — близькі та колеги знають, що на мене можна покластися."
+    },
+    {
+      "id": "Q14",
+      "strengthId": "critical_thinker",
+      "domainId": "thinking",
+      "marker": "action",
+      "text": "Коли мені пропонують ідею, я одразу перевіряю, чи спрацює вона в реальності."
+    },
+    {
+      "id": "Q29",
+      "strengthId": "optimizer",
+      "domainId": "doing",
+      "marker": "action",
+      "text": "Я завжди помічаю, як можна зробити процес зручнішим, швидшим або якіснішим."
+    },
+    {
+      "id": "Q44",
+      "strengthId": "mentor",
+      "domainId": "motivating",
+      "marker": "action",
+      "text": "Я швидко помічаю, у чому інша людина сильна, і завжди підкреслюю це в розмові."
+    },
+    {
+      "id": "Q59",
+      "strengthId": "optimist",
+      "domainId": "feeling",
+      "marker": "action",
+      "text": "Після невдач я швидко повертаю собі гарний настрій і допомагаю іншим не опускати руки."
+    },
+    {
+      "id": "Q2",
+      "strengthId": "systems_architect",
+      "domainId": "thinking",
+      "marker": "action",
+      "text": "Перед початком справи я завжди дивлюся, як вона вплине на все інше."
+    },
+    {
+      "id": "Q17",
+      "strengthId": "time_keeper",
+      "domainId": "doing",
+      "marker": "action",
+      "text": "Я люблю складати списки завдань, графіки та стежити, щоб усе встигалося вчасно."
+    },
+    {
+      "id": "Q32",
+      "strengthId": "storyteller",
+      "domainId": "motivating",
+      "marker": "action",
+      "text": "Коли я про щось розповідаю, люди легко втягуються і з цікавістю слухають."
+    },
+    {
+      "id": "Q47",
+      "strengthId": "empath",
+      "domainId": "feeling",
+      "marker": "action",
+      "text": "У розмові я легко ставлю себе на місце іншої людини й розумію її справжні почуття."
+    },
+    {
+      "id": "Q9",
+      "strengthId": "ideator",
+      "domainId": "thinking",
+      "marker": "trigger",
+      "text": "Нудна робота за суворими правилами без права на творчість швидко мене втомлює."
+    },
+    {
+      "id": "Q24",
+      "strengthId": "focus_master",
+      "domainId": "doing",
+      "marker": "trigger",
+      "text": "Мене сильно дратує, коли мене постійно смикають і змушують перемикатися між різними справами."
+    },
+    {
+      "id": "Q39",
+      "strengthId": "coordinator",
+      "domainId": "motivating",
+      "marker": "trigger",
+      "text": "Мені некомфортно в команді, де ніхто не хоче брати на себе відповідальність за спільне рішення."
+    },
+    {
+      "id": "Q54",
+      "strengthId": "believer",
+      "domainId": "feeling",
+      "marker": "trigger",
+      "text": "Я не можу довго залишатися в проєкті, де вимагають робити те, що суперечить моїм цінностям."
+    },
+    {
+      "id": "Q12",
+      "strengthId": "researcher",
+      "domainId": "thinking",
+      "marker": "trigger",
+      "text": "Я не люблю робити висновки, поки не перевірю всі факти."
+    },
+    {
+      "id": "Q27",
+      "strengthId": "adapter",
+      "domainId": "doing",
+      "marker": "trigger",
+      "text": "Мене сковують занадто жорсткі рамки, де не можна змінити маршрут під реальні обставини."
+    },
+    {
+      "id": "Q42",
+      "strengthId": "networker",
+      "domainId": "motivating",
+      "marker": "trigger",
+      "text": "Тривала робота наодинці без живого контакту з людьми змушує мене нудьгувати."
+    },
+    {
+      "id": "Q57",
+      "strengthId": "anchor",
+      "domainId": "feeling",
+      "marker": "trigger",
+      "text": "Мені некомфортно в поверхневому спілкуванні, де люди сьогодні дружать, а завтра забувають одне про одного."
+    },
+    {
+      "id": "Q15",
+      "strengthId": "critical_thinker",
+      "domainId": "thinking",
+      "marker": "trigger",
+      "text": "Мене втомлюють суперечки на емоціях, де ніхто не слухає логіку та факти."
+    },
+    {
+      "id": "Q30",
+      "strengthId": "optimizer",
+      "domainId": "doing",
+      "marker": "trigger",
+      "text": "Мене засмучує підхід «і так зійде», коли люди роблять роботу абияк, аби швидше здати."
+    },
+    {
+      "id": "Q45",
+      "strengthId": "mentor",
+      "domainId": "motivating",
+      "marker": "trigger",
+      "text": "Мені боляче бачити, коли талановиті люди сумніваються в собі й заривають свій потенціал."
+    },
+    {
+      "id": "Q60",
+      "strengthId": "optimist",
+      "domainId": "feeling",
+      "marker": "trigger",
+      "text": "Постійне ниття та песимізм оточуючих швидко псують мій внутрішній стан."
+    },
+    {
+      "id": "Q3",
+      "strengthId": "systems_architect",
+      "domainId": "thinking",
+      "marker": "trigger",
+      "text": "Мене дратує, коли люди приймають рішення навмання, не думаючи про наслідки."
+    },
+    {
+      "id": "Q18",
+      "strengthId": "time_keeper",
+      "domainId": "doing",
+      "marker": "trigger",
+      "text": "Мене вибиває з колії, коли люди постійно запізнюються або зривають домовлені терміни."
+    },
+    {
+      "id": "Q33",
+      "strengthId": "storyteller",
+      "domainId": "motivating",
+      "marker": "trigger",
+      "text": "Мені нудно читати або слухати сухі тексти без живих прикладів та зрозумілого сенсу."
+    },
+    {
+      "id": "Q48",
+      "strengthId": "empath",
+      "domainId": "feeling",
+      "marker": "trigger",
+      "text": "Мене виснажує перебування в середовищі, де панує холодність, байдужість або агресія."
+    },
+    {
+      "id": "Q6",
+      "strengthId": "strategist",
+      "domainId": "thinking",
+      "marker": "trigger",
+      "text": "Мені важко працювати, коли ніхто не розуміє, куди ми рухаємося глобально."
+    },
+    {
+      "id": "Q21",
+      "strengthId": "executor",
+      "domainId": "doing",
+      "marker": "trigger",
+      "text": "Дні, коли було багато балачок, але жодного конкретного результату, здаються мені змарнованими."
+    },
+    {
+      "id": "Q36",
+      "strengthId": "catalyst",
+      "domainId": "motivating",
+      "marker": "trigger",
+      "text": "Нескінченні обговорення без жодного кроку вперед швидко вбивають мій ентузіазм."
+    },
+    {
+      "id": "Q51",
+      "strengthId": "peacemaker",
+      "domainId": "feeling",
+      "marker": "trigger",
+      "text": "Постійні сварки, інтриги та напруга в команді забирають у мене майже всю енергію."
+    }
+  ]
+}

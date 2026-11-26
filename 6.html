@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Топ-5 Сильних Сторін — Тест особистості</title>
+    <!-- Підключення Tailwind CSS для сучасної адаптивної стилізації -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Підключення шрифту Inter з підтримкою кирилиці -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Плавні переходи та анімації появи карток */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-card {
+            animation: fadeSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        /* М'який пастельний фон сторінки */
+        body {
+            background: radial-gradient(circle at 10% 15%, rgba(204, 251, 241, 0.55) 0%, transparent 45%),
+                        radial-gradient(circle at 90% 85%, rgba(237, 233, 254, 0.65) 0%, transparent 45%),
+                        linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-teal-100 selection:text-teal-900 flex flex-col justify-between">
+
+    <!-- Верхня навігаційна панель -->
+    <header class="w-full max-w-4xl mx-auto px-4 pt-6 pb-2 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-teal-500 to-indigo-600 flex items-center justify-center text-white font-bold shadow-sm">
+                5
+            </div>
+            <div>
+                <span class="font-bold text-slate-800 tracking-tight text-base sm:text-lg block leading-none">П'ятірка Талантів</span>
+                <span class="text-xs text-slate-500 font-medium">Профіль природних сильних сторін</span>
+            </div>
+        </div>
+        <button id="header-restart-btn" onclick="resetToStart()" class="hidden text-xs sm:text-sm font-medium text-slate-500 hover:text-slate-800 bg-white/80 hover:bg-white px-3 py-1.5 rounded-xl border border-slate-200/80 transition shadow-sm">
+            На початок
+        </button>
+    </header>
+
+    <!-- Головний контейнер екранів -->
+    <main class="w-full max-w-3xl mx-auto px-4 py-6 flex-grow flex items-center justify-center">
+        
+        <!-- ЕКРАН 1: СТАРТ -->
+        <section id="screen-start" class="w-full bg-white/90 backdrop-blur-md rounded-3xl shadow-xl shadow-slate-200/60 border border-white p-6 sm:p-10 animate-card">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 text-teal-700 text-xs font-semibold mb-5 border border-teal-100">
+                <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+                Наукова модель позитивної психології • 60 тверджень
+            </div>
+            
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
+                Відкрий свої <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-indigo-600 to-violet-600">Топ-5 сильних сторін</span>
+            </h1>
+            
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6">
+                Цей тест допоможе визначити твої природні таланти — те, що дається тобі легко, заряджає енергією та допомагає досягати результатів без вигорання.
+            </p>
+
+            <!-- Блок 4 доменів -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div class="p-3.5 rounded-2xl bg-indigo-50/60 border border-indigo-100/80 flex items-start gap-3">
+                    <span class="w-3 h-3 rounded-full mt-1.5 shrink-0" style="background-color: #4F46E5;"></span>
+                    <div>
+                        <h3 class="font-semibold text-slate-800 text-sm">Домен Мислення</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Аналіз, стратегія, генерація ідей та пізнання</p>
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-100/80 flex items-start gap-3">
+                    <span class="w-3 h-3 rounded-full mt-1.5 shrink-0" style="background-color: #D97706;"></span>
+                    <div>
+                        <h3 class="font-semibold text-slate-800 text-sm">Домен Дії</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Організація, фокус, адаптивність і результат</p>
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-emerald-50/60 border border-emerald-100/80 flex items-start gap-3">
+                    <span class="w-3 h-3 rounded-full mt-1.5 shrink-0" style="background-color: #059669;"></span>
+                    <div>
+                        <h3 class="font-semibold text-slate-800 text-sm">Вплив та Комунікація</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Сенси, ініціатива, координація та менторство</p>
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-violet-50/60 border border-violet-100/80 flex items-start gap-3">
+                    <span class="w-3 h-3 rounded-full mt-1.5 shrink-0" style="background-color: #7C3AED;"></span>
+                    <div>
+                        <h3 class="font-semibold text-slate-800 text-sm">Емпатія та Цінності</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Довіра, гармонія, принципи та підтримка</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Налаштування та кнопка старту -->
+            <div class="bg-slate-50/90 rounded-2xl p-4 mb-6 border border-slate-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="text-xs sm:text-sm text-slate-600">
+                    <span class="font-semibold text-slate-800">Час проходження:</span> ~7–9 хвилин. Відповідай щиро, орієнтуючись на першу реакцію.
+                </div>
+                <label class="inline-flex items-center gap-2 cursor-pointer shrink-0 select-none">
+                    <input type="checkbox" id="shuffle-toggle" checked class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 border-slate-300">
+                    <span class="text-xs font-medium text-slate-700">Перемішати питання при старті</span>
+                </label>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-3">
+                <button onclick="startTest(false)" class="w-full sm:flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-teal-600 to-indigo-600 hover:from-teal-700 hover:to-indigo-700 text-white font-semibold text-base shadow-lg shadow-indigo-200/70 transition transform active:scale-[0.99] cursor-pointer">
+                    Почати тестування →
+                </button>
+            </div>
+
+            <!-- Непомітний інструмент розробника / тестувальника -->
+            <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+                <span>Підтримка клавіш 1–5 під час відповіді</span>
+                <div class="flex items-center gap-3">
+                    <button onclick="downloadBaseJSON()" class="hover:text-slate-600 underline decoration-dotted transition cursor-pointer">
+                        Експорт JSON-бази
+                    </button>
+                    <span>•</span>
+                    <button onclick="startTest(true)" class="hover:text-teal-600 underline decoration-dotted transition cursor-pointer">
+                        Демо-режим (заповнити випадково)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЕКРАН 2: ПРОХОДЖЕННЯ ТЕСТУ -->
+        <section id="screen-quiz" class="hidden w-full bg-white/95 backdrop-blur-md rounded-3xl shadow-xl shadow-slate-200/60 border border-white p-6 sm:p-10">
+            <!-- Прогрес-бар -->
+            <div class="mb-6">
+                <div class="flex items-center justify-between text-xs sm:text-sm font-medium text-slate-500 mb-2">
+                    <span id="question-counter" class="text-slate-800 font-semibold">Питання 1 з 60</span>
+                    <span id="progress-percent">2%</span>
+                </div>
+                <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-gradient-to-r from-teal-500 via-indigo-500 to-violet-500 rounded-full transition-all duration-300 ease-out" style="width: 1.66%;"></div>
+                </div>
+            </div>
+
+            <!-- Картка запитання -->
+            <div id="question-container" class="min-h-[120px] sm:min-h-[140px] flex flex-col justify-center mb-8">
+                <div class="mb-3">
+                    <span id="question-status-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-500">
+                        Очікує на відповідь
+                    </span>
+                </div>
+                <p id="question-text" class="text-xl sm:text-2xl font-bold text-slate-800 leading-snug">
+                    Завантаження запитання...
+                </p>
+            </div>
+
+            <!-- Шкала відповідей (5 кнопок) -->
+            <div id="answers-container" class="space-y-2.5 mb-8">
+                <!-- Кнопки генеруються динамічно через JS -->
+            </div>
+
+            <!-- Нижня навігація -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100">
+                <button id="btn-prev" onclick="prevQuestion()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 disabled:opacity-40 disabled:pointer-events-none transition cursor-pointer">
+                    ← Назад
+                </button>
+
+                <button id="btn-toggle-map" onclick="toggleQuestionMap()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-indigo-700 bg-indigo-50/80 hover:bg-indigo-100/80 border border-indigo-200/70 transition cursor-pointer">
+                    <span id="answered-summary">Відповідей: 0 з 60</span>
+                    <span id="map-chevron" class="transition-transform duration-200">▾</span>
+                </button>
+
+                <button id="btn-next" onclick="nextQuestion()" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-teal-700 bg-teal-50 hover:bg-teal-100 border border-teal-200/70 transition cursor-pointer">
+                    Далі →
+                </button>
+            </div>
+
+            <!-- Розгортана мапа всіх 60 питань -->
+            <div id="question-map-panel" class="hidden mt-5 pt-5 border-t border-slate-100">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3 text-xs text-slate-500">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-teal-500 inline-block"></span> Є відповідь</span>
+                        <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-100 border border-slate-300 inline-block"></span> Без відповіді</span>
+                        <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded border-2 border-indigo-600 inline-block"></span> Поточне</span>
+                    </div>
+                    <button id="btn-jump-unanswered" onclick="jumpToFirstUnanswered()" class="text-indigo-600 hover:text-indigo-800 font-semibold underline decoration-dotted cursor-pointer">
+                        До першого пропущеного →
+                    </button>
+                </div>
+                <div id="question-map-grid" class="grid grid-cols-10 sm:grid-cols-12 gap-1.5">
+                    <!-- Кнопки 1..60 генеруються через JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ЕКРАН 3: РЕЗУЛЬТАТИ -->
+        <section id="screen-results" class="hidden w-full space-y-6 animate-card">
+            
+            <!-- Головна картка Топ-5 -->
+            <div class="bg-white/95 backdrop-blur-md rounded-3xl shadow-xl shadow-slate-200/60 border border-white p-6 sm:p-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold mb-2 border border-emerald-100">
+                            Аналіз завершено • 60/60 відповідей
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                            Твої Топ-5 сильних сторін
+                        </h2>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Комбінація природних талантів, які дають тобі найбільше енергії та ефективності.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Блок генерації картинки результату -->
+                <div class="mb-6 p-4 rounded-2xl bg-slate-50/90 border border-slate-200/70 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                    <div class="flex-grow">
+                        <label for="user-name-input" class="block text-xs font-semibold text-slate-600 mb-1">Ім'я для картки результату (необов'язково)</label>
+                        <input type="text" id="user-name-input" placeholder="Наприклад: Вікторія" maxlength="32" class="w-full px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition">
+                    </div>
+                    <button onclick="downloadResultPNG()" class="sm:self-end px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold text-sm shadow-md shadow-teal-200/60 transition flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+                        <span>🖼 Зберегти картинку (PNG)</span>
+                    </button>
+                </div>
+
+                <!-- Список Топ-5 -->
+                <div id="top5-list" class="space-y-4">
+                    <!-- Картки Топ-5 генеруються через JS -->
+                </div>
+            </div>
+
+            <!-- Розподіл за 4 доменами -->
+            <div class="bg-white/95 backdrop-blur-md rounded-3xl shadow-lg shadow-slate-200/50 border border-white p-6 sm:p-8">
+                <h3 class="text-lg font-bold text-slate-800 mb-1">Баланс за 4 доменами</h3>
+                <p class="text-xs sm:text-sm text-slate-500 mb-5">Показує, у яких сферах зосереджена твоя природна енергія.</p>
+                
+                <div id="domains-chart" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Прогрес-бари доменів генеруються через JS -->
+                </div>
+            </div>
+
+            <!-- Акордеон усіх 20 якостей -->
+            <div class="bg-white/95 backdrop-blur-md rounded-3xl shadow-lg shadow-slate-200/50 border border-white overflow-hidden">
+                <button onclick="toggleAllStrengths()" class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50/80 transition cursor-pointer">
+                    <div>
+                        <span class="font-bold text-slate-800 text-base block">Переглянути повний рейтинг усіх 20 якостей</span>
+                        <span class="text-xs text-slate-500">Від найсильніших талантів до фонових якостей</span>
+                    </div>
+                    <span id="accordion-icon" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold transition-transform duration-200">
+                        ↓
+                    </span>
+                </button>
+                <div id="all-strengths-panel" class="hidden px-6 pb-6 pt-2 border-t border-slate-100">
+                    <div id="all-strengths-list" class="divide-y divide-slate-100">
+                        <!-- Повний список генерується через JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Панель дій та експорту -->
+            <div class="bg-white/90 backdrop-blur-md rounded-3xl shadow-lg shadow-slate-200/50 border border-white p-5 sm:p-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                <button onclick="resetToStart()" class="px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200/80 text-slate-700 font-semibold text-sm transition text-center cursor-pointer">
+                    ↻ Пройти ще раз
+                </button>
+                
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3">
+                    <button onclick="downloadResultPNG()" class="px-5 py-3 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold text-sm border border-emerald-200 transition text-center cursor-pointer">
+                        🖼 Завантажити картинку (PNG)
+                    </button>
+                    <button onclick="downloadBaseJSON()" class="px-5 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-200 shadow-sm transition text-center cursor-pointer">
+                        ⬇ JSON-база тесту
+                    </button>
+                    <button onclick="downloadUserResultJSON()" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-teal-600 to-indigo-600 hover:from-teal-700 hover:to-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-200/60 transition text-center cursor-pointer">
+                        ⬇ Мій результат (JSON)
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Прихований Canvas для генерації PNG-картки результату -->
+    <canvas id="result-canvas" class="hidden"></canvas>
+    <!-- Модальне вікно попередження про незавершений тест -->
+    <div id="incomplete-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 backdrop-blur-xs p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-slate-100 animate-card">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold mb-4 border border-amber-200/70">
+                !
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Тест ще не пройдено до кінця</h3>
+            <p id="incomplete-modal-text" class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                Ви відповіли не на всі запитання. Будь ласка, поверніться та заповніть пропущені пункти, щоб отримати точний результат.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-2.5 justify-end">
+                <button onclick="closeIncompleteModal()" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-100 transition cursor-pointer">
+                    Залишитись тут
+                </button>
+                <button onclick="goToUnansweredFromModal()" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-teal-600 to-indigo-600 hover:from-teal-700 hover:to-indigo-700 shadow-md shadow-indigo-200/60 transition cursor-pointer">
+                    Перейти до пропущеного →
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Повідомлення (Toast замість alert) -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white text-sm font-medium px-4 py-3 rounded-2xl shadow-xl">
+        Файл завантажено
+    </div>
+
+    <script>
+        /**
+         * АВТОНОМНА JSON-БАЗА ТЕСТУ (TEST_DATA)
+         * Містить 4 домени, 20 сильних сторін та 60 стратифіковано перемішаних запитань.
+         * Цю константу можна без змін винести в окремий файл strengths-test-data.json.
+         */
+        const TEST_DATA = {
+            meta: {
+                title: "Тест на визначення Топ-5 сильних сторін особистості",
+                version: "1.0.0",
+                language: "uk",
+                totalQuestions: 60,
+                scale: [
+                    { value: 1, label: "Зовсім не про мене" },
+                    { value: 2, label: "Рідко про мене" },
+                    { value: 3, label: "Іноді / залежить від ситуації" },
+                    { value: 4, label: "Часто про мене" },
+                    { value: 5, label: "Абсолютно про мене" }
+                ]
+            },
+            domains: [
+                {
+                    id: "thinking",
+                    name: "Домен Мислення",
+                    color: "#4F46E5",
+                    secondaryColor: "#0D9488",
+                    bgLight: "#EEF2FF",
+                    borderLight: "#C7D2FE",
+                    description: "Як людина обробляє інформацію, аналізує світ та генерує рішення."
+                },
+                {
+                    id: "doing",
+                    name: "Домен Дії",
+                    color: "#D97706",
+                    secondaryColor: "#F59E0B",
+                    bgLight: "#FFFBEB",
+                    borderLight: "#FDE68A",
+                    description: "Як людина організовує процеси, тримає фокус та втілює задуми в реальність."
+                },
+                {
+                    id: "motivating",
+                    name: "Домен Впливу та Комунікації",
+                    color: "#059669",
+                    secondaryColor: "#10B981",
+                    bgLight: "#ECFDF5",
+                    borderLight: "#A7F3D0",
+                    description: "Як людина взаємодіє з іншими, передає сенси та веде за собою."
+                },
+                {
+                    id: "feeling",
+                    name: "Домен Емпатії та Цінностей",
+                    color: "#7C3AED",
+                    secondaryColor: "#8B5CF6",
+                    bgLight: "#F5F3FF",
+                    borderLight: "#DDD6FE",
+                    description: "Як людина будує довіру, відчуває інших та тримає внутрішню опору."
+                }
+            ],
+            strengths: [
+                // Домен Мислення (thinking)
+                {
+                    id: "systems_architect",
+                    domainId: "thinking",
+                    name: "Архітектор систем (Системний аналітик)",
+                    shortDescription: "Ви бачите приховані взаємозв'язки між елементами та вмієте перетворювати хаос на зрозумілу, логічну структуру."
+                },
+                {
+                    id: "strategist",
+                    domainId: "thinking",
+                    name: "Стратег-візіонер",
+                    shortDescription: "Ви мислите на кілька кроків уперед, прораховуєте різні сценарії розвитку подій і знаходите оптимальний маршрут до мети."
+                },
+                {
+                    id: "ideator",
+                    domainId: "thinking",
+                    name: "Генератор ідей (Новатор)",
+                    shortDescription: "Ви легко створюєте нестандартні концепції, поєднуєте непоєднуване та заряджаєтесь від пошуку свіжих рішень."
+                },
+                {
+                    id: "researcher",
+                    domainId: "thinking",
+                    name: "Дослідник-ерудит",
+                    shortDescription: "Ви отримуєте задоволення від глибокого занурення в тему, збору фактів та постійного інтелектуального розвитку."
+                },
+                {
+                    id: "critical_thinker",
+                    domainId: "thinking",
+                    name: "Критичний мислитель (Діагност)",
+                    shortDescription: "Ви швидко виявляєте суперечності, слабкі місця в планах та вмієте відділити об'єктивні факти від емоцій."
+                },
+                // Домен Дії (doing)
+                {
+                    id: "time_keeper",
+                    domainId: "doing",
+                    name: "Хранитель порядку та часу",
+                    shortDescription: "Ви створюєте ритм, чіткі графіки та передбачуваність, завдяки чому процеси рухаються вчасно й без зайвого стресу."
+                },
+                {
+                    id: "executor",
+                    domainId: "doing",
+                    name: "Двигун реалізації (Виконавець)",
+                    shortDescription: "Ви перетворюєте ідеї на конкретні кроки й отримуєте щире задоволення від завершених справ і відчутного результату."
+                },
+                {
+                    id: "focus_master",
+                    domainId: "doing",
+                    name: "Майстер фокусу",
+                    shortDescription: "Ви здатні глибоко концентруватися на головному пріоритеті, відсікаючи інформаційний шум та другорядні відволікання."
+                },
+                {
+                    id: "adapter",
+                    domainId: "doing",
+                    name: "Гнучкий адаптер (Навігатор змін)",
+                    shortDescription: "Ви не губитеся в умовах невизначеності, легко перебудовуєтесь на ходу та знаходите ефективні рішення в моменті."
+                },
+                {
+                    id: "optimizer",
+                    domainId: "doing",
+                    name: "Оптимізатор (Перфекціоніст якості)",
+                    shortDescription: "Ви помічаєте дрібні деталі та знаєте, як удосконалити хороший продукт чи процес до найвищого рівня."
+                },
+                // Домен Впливу та Комунікації (motivating)
+                {
+                    id: "storyteller",
+                    domainId: "motivating",
+                    name: "Оповідач (Майстер сенсів)",
+                    shortDescription: "Ви вмієте пояснювати складні речі просто, образно та захопливо, перетворюючи факти на живі історії."
+                },
+                {
+                    id: "catalyst",
+                    domainId: "motivating",
+                    name: "Каталізатор (Ініціатор)",
+                    shortDescription: "Ви заряджаєте енергією старт нових справ, допомагаєте подолати інерцію та переводите обговорення у дію."
+                },
+                {
+                    id: "coordinator",
+                    domainId: "motivating",
+                    name: "Лідер-координатор",
+                    shortDescription: "Ви природно берете відповідальність у важливий момент, розподіляєте ролі та об'єднуєте людей навколо спільної цілі."
+                },
+                {
+                    id: "networker",
+                    domainId: "motivating",
+                    name: "Амбасадор зв'язків (Нетворкер)",
+                    shortDescription: "Ви легко знаходите спільну мову з різними людьми, будуєте мости між командами та розширюєте коло довіри."
+                },
+                {
+                    id: "mentor",
+                    domainId: "motivating",
+                    name: "Мотиватор-ментор",
+                    shortDescription: "Ви бачите прихований потенціал в інших людях, умієте підтримати їхній розвиток і допомогти повірити у власні сили."
+                },
+                // Домен Емпатії та Цінностей (feeling)
+                {
+                    id: "empath",
+                    domainId: "feeling",
+                    name: "Емпат (Тонкий спостерігач)",
+                    shortDescription: "Ви глибоко відчуваєте емоційний стан та приховані потреби співрозмовників, створюючи атмосферу безпеки."
+                },
+                {
+                    id: "peacemaker",
+                    domainId: "feeling",
+                    name: "Миротворець (Медіатор)",
+                    shortDescription: "Ви вмієте згладжувати гострі кути, знаходити спільну мову в конфліктах та зберігати гармонію в колективі."
+                },
+                {
+                    id: "believer",
+                    domainId: "feeling",
+                    name: "Людина принципів (Ціннісний фундамент)",
+                    shortDescription: "Ви спираєтесь на внутрішній етичний компас і працюєте з максимальною віддачею там, де бачите чесність і користь."
+                },
+                {
+                    id: "anchor",
+                    domainId: "feeling",
+                    name: "Опора стабільності (Надійний партнер)",
+                    shortDescription: "Ви будуєте глибокі, віддані та довготривалі стосунки — людина, на слово якої завжди можна покластися."
+                },
+                {
+                    id: "optimist",
+                    domainId: "feeling",
+                    name: "Оптиміст-натхненник",
+                    shortDescription: "Ви приносите в команду життєстійкість, віру в позитивний результат і допомагаєте іншим не опускати руки."
+                }
+            ],
+            // 60 запитань, заздалегідь стратифіковано перемішаних за доменами та якостями
+            questions: [
+                { id: "Q1", strengthId: "systems_architect", domainId: "thinking", marker: "energy", text: "Мені приємно наводити лад у хаосі та розкладати все по поличках." },
+                { id: "Q16", strengthId: "time_keeper", domainId: "doing", marker: "energy", text: "Я почуваюся спокійно й впевнено, коли мій день або тиждень чітко розпланований." },
+                { id: "Q31", strengthId: "storyteller", domainId: "motivating", marker: "energy", text: "Мені подобається пояснювати складні речі простими словами, через приклади чи історії." },
+                { id: "Q46", strengthId: "empath", domainId: "feeling", marker: "energy", text: "Я тонко відчуваю настрій інших людей, навіть коли вони намагаються це приховати." },
+                { id: "Q4", strengthId: "strategist", domainId: "thinking", marker: "energy", text: "Я люблю продумувати свої дії на кілька кроків уперед." },
+                { id: "Q19", strengthId: "executor", domainId: "doing", marker: "energy", text: "Я отримую справжній кайф, коли ставлю галочку навпроти завершеної справи." },
+                { id: "Q34", strengthId: "catalyst", domainId: "motivating", marker: "energy", text: "Мене заряджає момент старту, коли треба зрушити ідею з мертвої точки." },
+                { id: "Q49", strengthId: "peacemaker", domainId: "feeling", marker: "energy", text: "Мені приємно допомагати людям порозумітися та знаходити спільне рішення у складних суперечках." },
+                { id: "Q7", strengthId: "ideator", domainId: "thinking", marker: "energy", text: "Нові завдання, де треба придумати щось незвичне, додають мені сил." },
+                { id: "Q22", strengthId: "focus_master", domainId: "doing", marker: "energy", text: "Мені легко повністю зануритися в одне важливе завдання і не відволікатися на дрібниці." },
+                { id: "Q37", strengthId: "coordinator", domainId: "motivating", marker: "energy", text: "У незрозумілій ситуації я природно беру ініціативу в свої руки й організовую процес." },
+                { id: "Q52", strengthId: "believer", domainId: "feeling", marker: "energy", text: "Я працюю з максимальною віддачею, коли щиро вірю в чесність та користь нашої справи." },
+                { id: "Q10", strengthId: "researcher", domainId: "thinking", marker: "energy", text: "Мені щиро подобається вивчати нові теми та копати вглиб." },
+                { id: "Q25", strengthId: "adapter", domainId: "doing", marker: "energy", text: "Коли все йде не за планом, я не панікую, а навіть відчуваю спортивний азарт." },
+                { id: "Q40", strengthId: "networker", domainId: "motivating", marker: "energy", text: "Знайомства з новими людьми та живе спілкування дають мені заряд бадьорості." },
+                { id: "Q55", strengthId: "anchor", domainId: "feeling", marker: "energy", text: "Для мене дуже важливо вибудовувати глибокі, чесні та довготривалі стосунки з людьми." },
+                { id: "Q13", strengthId: "critical_thinker", domainId: "thinking", marker: "energy", text: "Я швидко помічаю помилки, нестиковки та слабкі місця в будь-якому плані." },
+                { id: "Q28", strengthId: "optimizer", domainId: "doing", marker: "energy", text: "Мені приємно доводити хорошу роботу до блиску й покращувати дрібні деталі." },
+                { id: "Q43", strengthId: "mentor", domainId: "motivating", marker: "energy", text: "Я щиро радію, коли бачу, як завдяки моїй підтримці чи пораді хтось починає рости." },
+                { id: "Q58", strengthId: "optimist", domainId: "feeling", marker: "energy", text: "Я вмію знайти світлий бік і привід для надії навіть у непростих обставинах." },
+
+                { id: "Q5", strengthId: "strategist", domainId: "thinking", marker: "action", text: "У мене майже завжди є план «Б» на випадок, якщо щось піде не так." },
+                { id: "Q20", strengthId: "executor", domainId: "doing", marker: "action", text: "Замість довгих розмов про плани я волію швидше перейти до реальних дій." },
+                { id: "Q35", strengthId: "catalyst", domainId: "motivating", marker: "action", text: "Якщо команда довго вагається, я зазвичай першим кажу: «Давайте просто спробуємо!»." },
+                { id: "Q50", strengthId: "peacemaker", domainId: "feeling", marker: "action", text: "Коли в колективі назріває конфлікт, я природно згладжую гострі кути й повертаю спокійну атмосферу." },
+                { id: "Q8", strengthId: "ideator", domainId: "thinking", marker: "action", text: "Мені легко поєднати дві звичайні ідеї, щоб вийшло щось круте й нове." },
+                { id: "Q23", strengthId: "focus_master", domainId: "doing", marker: "action", text: "Я завжди спочатку визначаю головну ціль дня і не розпорошуюся на все підряд." },
+                { id: "Q38", strengthId: "coordinator", domainId: "motivating", marker: "action", text: "Мені легко розподілити завдання між людьми так, щоб кожен робив те, що вміє найкраще." },
+                { id: "Q53", strengthId: "believer", domainId: "feeling", marker: "action", text: "У складній ситуації я завжди спираюся на власні принципи, навіть якщо простіше було б піти на компроміс із совістю." },
+                { id: "Q11", strengthId: "researcher", domainId: "thinking", marker: "action", text: "Якщо мене щось зацікавило, я перечитаю купу інформації, щоб розібратися до кінця." },
+                { id: "Q26", strengthId: "adapter", domainId: "doing", marker: "action", text: "Я швидко підлаштовуюся під нові правила та знаходжу рішення прямо на ходу." },
+                { id: "Q41", strengthId: "networker", domainId: "motivating", marker: "action", text: "Я легко знаходжу спільну мову з дуже різними людьми й часто знайомлю їх між собою." },
+                { id: "Q56", strengthId: "anchor", domainId: "feeling", marker: "action", text: "Якщо я щось пообіцяв, то обов'язково виконаю — близькі та колеги знають, що на мене можна покластися." },
+                { id: "Q14", strengthId: "critical_thinker", domainId: "thinking", marker: "action", text: "Коли мені пропонують ідею, я одразу перевіряю, чи спрацює вона в реальності." },
+                { id: "Q29", strengthId: "optimizer", domainId: "doing", marker: "action", text: "Я завжди помічаю, як можна зробити процес зручнішим, швидшим або якіснішим." },
+                { id: "Q44", strengthId: "mentor", domainId: "motivating", marker: "action", text: "Я швидко помічаю, у чому інша людина сильна, і завжди підкреслюю це в розмові." },
+                { id: "Q59", strengthId: "optimist", domainId: "feeling", marker: "action", text: "Після невдач я швидко повертаю собі гарний настрій і допомагаю іншим не опускати руки." },
+                { id: "Q2", strengthId: "systems_architect", domainId: "thinking", marker: "action", text: "Перед початком справи я завжди дивлюся, як вона вплине на все інше." },
+                { id: "Q17", strengthId: "time_keeper", domainId: "doing", marker: "action", text: "Я люблю складати списки завдань, графіки та стежити, щоб усе встигалося вчасно." },
+                { id: "Q32", strengthId: "storyteller", domainId: "motivating", marker: "action", text: "Коли я про щось розповідаю, люди легко втягуються і з цікавістю слухають." },
+                { id: "Q47", strengthId: "empath", domainId: "feeling", marker: "action", text: "У розмові я легко ставлю себе на місце іншої людини й розумію її справжні почуття." },
+
+                { id: "Q9", strengthId: "ideator", domainId: "thinking", marker: "trigger", text: "Нудна робота за суворими правилами без права на творчість швидко мене втомлює." },
+                { id: "Q24", strengthId: "focus_master", domainId: "doing", marker: "trigger", text: "Мене сильно дратує, коли мене постійно смикають і змушують перемикатися між різними справами." },
+                { id: "Q39", strengthId: "coordinator", domainId: "motivating", marker: "trigger", text: "Мені некомфортно в команді, де ніхто не хоче брати на себе відповідальність за спільне рішення." },
+                { id: "Q54", strengthId: "believer", domainId: "feeling", marker: "trigger", text: "Я не можу довго залишатися в проєкті, де вимагають робити те, що суперечить моїм цінностям." },
+                { id: "Q12", strengthId: "researcher", domainId: "thinking", marker: "trigger", text: "Я не люблю робити висновки, поки не перевірю всі факти." },
+                { id: "Q27", strengthId: "adapter", domainId: "doing", marker: "trigger", text: "Мене сковують занадто жорсткі рамки, де не можна змінити маршрут під реальні обставини." },
+                { id: "Q42", strengthId: "networker", domainId: "motivating", marker: "trigger", text: "Тривала робота наодинці без живого контакту з людьми змушує мене нудьгувати." },
+                { id: "Q57", strengthId: "anchor", domainId: "feeling", marker: "trigger", text: "Мені некомфортно в поверхневому спілкуванні, де люди сьогодні дружать, а завтра забувають одне про одного." },
+                { id: "Q15", strengthId: "critical_thinker", domainId: "thinking", marker: "trigger", text: "Мене втомлюють суперечки на емоціях, де ніхто не слухає логіку та факти." },
+                { id: "Q30", strengthId: "optimizer", domainId: "doing", marker: "trigger", text: "Мене засмучує підхід «і так зійде», коли люди роблять роботу абияк, аби швидше здати." },
+                { id: "Q45", strengthId: "mentor", domainId: "motivating", marker: "trigger", text: "Мені боляче бачити, коли талановиті люди сумніваються в собі й заривають свій потенціал." },
+                { id: "Q60", strengthId: "optimist", domainId: "feeling", marker: "trigger", text: "Постійне ниття та песимізм оточуючих швидко псують мій внутрішній стан." },
+                { id: "Q3", strengthId: "systems_architect", domainId: "thinking", marker: "trigger", text: "Мене дратує, коли люди приймають рішення навмання, не думаючи про наслідки." },
+                { id: "Q18", strengthId: "time_keeper", domainId: "doing", marker: "trigger", text: "Мене вибиває з колії, коли люди постійно запізнюються або зривають домовлені терміни." },
+                { id: "Q33", strengthId: "storyteller", domainId: "motivating", marker: "trigger", text: "Мені нудно читати або слухати сухі тексти без живих прикладів та зрозумілого сенсу." },
+                { id: "Q48", strengthId: "empath", domainId: "feeling", marker: "trigger", text: "Мене виснажує перебування в середовищі, де панує холодність, байдужість або агресія." },
+                { id: "Q6", strengthId: "strategist", domainId: "thinking", marker: "trigger", text: "Мені важко працювати, коли ніхто не розуміє, куди ми рухаємося глобально." },
+                { id: "Q21", strengthId: "executor", domainId: "doing", marker: "trigger", text: "Дні, коли було багато балачок, але жодного конкретного результату, здаються мені змарнованими." },
+                { id: "Q36", strengthId: "catalyst", domainId: "motivating", marker: "trigger", text: "Нескінченні обговорення без жодного кроку вперед швидко вбивають мій ентузіазм." },
+                { id: "Q51", strengthId: "peacemaker", domainId: "feeling", marker: "trigger", text: "Постійні сварки, інтриги та напруга в команді забирають у мене майже всю енергію." }
+            ]
+        };
+
+        // Стан проходження тесту
+        let state = {
+            activeQuestions: [],
+            currentIndex: 0,
+            answers: {}, // { questionId: score (1..5) }
+            lastCalculatedResults: null
+        };
+
+        /**
+         * Стратифіковане перемішування питань, щоб питання одного домену чи якості не йшли підряд
+         */
+        function prepareQuestions(shouldShuffle) {
+            if (!shouldShuffle) {
+                return [...TEST_DATA.questions];
+            }
+            // Групуємо питання за доменами, перемішуємо всередині кожного домену, потім чергуємо
+            const byDomain = {};
+            TEST_DATA.domains.forEach(d => byDomain[d.id] = []);
+            
+            TEST_DATA.questions.forEach(q => {
+                byDomain[q.domainId].push(q);
+            });
+
+            Object.keys(byDomain).forEach(domainId => {
+                byDomain[domainId] = shuffleArray(byDomain[domainId]);
+            });
+
+            const domainKeys = shuffleArray(Object.keys(byDomain));
+            const result = [];
+            const maxLen = Math.max(...Object.values(byDomain).map(arr => arr.length));
+
+            for (let i = 0; i < maxLen; i++) {
+                // Злегка змінюємо порядок доменів на кожному колі, щоб уникнути монотонності
+                const roundDomains = shuffleArray([...domainKeys]);
+                for (const dKey of roundDomains) {
+                    if (byDomain[dKey][i]) {
+                        // Перевірка, щоб не було підряд тієї самої сильної сторони
+                        result.push(byDomain[dKey][i]);
+                    }
+                }
+            }
+            return result;
+        }
+
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        /**
+         * Перемикання між екранами (start | quiz | results)
+         */
+        function showScreen(screenName) {
+            document.getElementById('screen-start').classList.add('hidden');
+            document.getElementById('screen-quiz').classList.add('hidden');
+            document.getElementById('screen-results').classList.add('hidden');
+
+            const target = document.getElementById(`screen-${screenName}`);
+            target.classList.remove('hidden');
+            target.classList.remove('animate-card');
+            void target.offsetWidth; // перезапуск CSS-анімації
+            target.classList.add('animate-card');
+
+            const headerBtn = document.getElementById('header-restart-btn');
+            if (screenName === 'start') {
+                headerBtn.classList.add('hidden');
+            } else {
+                headerBtn.classList.remove('hidden');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /**
+         * Старт тестування (або миттєвий демо-режим)
+         */
+        function startTest(isDemo = false) {
+            const shouldShuffle = document.getElementById('shuffle-toggle').checked;
+            state.activeQuestions = prepareQuestions(shouldShuffle);
+            state.currentIndex = 0;
+            state.answers = {};
+            state.lastCalculatedResults = null;
+
+            if (isDemo) {
+                fillRemainingDemo();
+                return;
+            }
+
+            renderQuestion();
+            showScreen('quiz');
+        }
+
+        /**
+         * Заповнення решти відповідей реалістичними випадковими даними для швидкого тестування UI
+         */
+        function fillRemainingDemo() {
+            // Генеруємо "профіль схильностей" для реалістичного розподілу балів у демо-режимі
+            const affinity = {};
+            TEST_DATA.strengths.forEach((s, idx) => {
+                // Кілька якостей отримують вищий базовий пріоритет
+                affinity[s.id] = (idx % 4 === 0) ? 1.4 : ((idx % 3 === 0) ? 0.6 : -0.3);
+            });
+
+            state.activeQuestions.forEach(q => {
+                if (!state.answers[q.id]) {
+                    const base = 3 + affinity[q.strengthId] + (Math.random() * 2.2 - 1.1);
+                    const clamped = Math.max(1, Math.min(5, Math.round(base)));
+                    state.answers[q.id] = clamped;
+                }
+            });
+
+            calculateAndShowResults();
+        }
+
+        /**
+         * Відображення поточного запитання та кнопок шкали
+         */
+        function renderQuestion() {
+            const total = state.activeQuestions.length;
+            const currentQ = state.activeQuestions[state.currentIndex];
+            const savedAnswer = state.answers[currentQ.id];
+            const answeredCount = Object.keys(state.answers).length;
+
+            // Оновлення прогресу за кількістю даних відповідей
+            const percent = Math.round((answeredCount / total) * 100);
+            document.getElementById('question-counter').textContent = `Питання ${state.currentIndex + 1} з ${total}`;
+            document.getElementById('progress-percent').textContent = `Пройдено: ${percent}%`;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+
+            // Бейдж статусу поточного питання
+            const statusBadge = document.getElementById('question-status-badge');
+            if (savedAnswer) {
+                statusBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 text-teal-700 border border-teal-200/70';
+                statusBadge.textContent = `✓ Відповідь збережено (${savedAnswer} з 5)`;
+            } else {
+                statusBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50/80 text-amber-700 border border-amber-200/60';
+                statusBadge.textContent = '○ Ще без відповіді';
+            }
+
+            // Текст запитання з легкою анімацією
+            const qContainer = document.getElementById('question-container');
+            qContainer.classList.remove('animate-card');
+            void qContainer.offsetWidth;
+            qContainer.classList.add('animate-card');
+            document.getElementById('question-text').textContent = currentQ.text;
+
+            // Кнопки шкали 1–5
+            const answersContainer = document.getElementById('answers-container');
+            answersContainer.innerHTML = '';
+
+            TEST_DATA.meta.scale.forEach(option => {
+                const isSelected = savedAnswer === option.value;
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.onclick = () => selectAnswer(option.value);
+                
+                btn.className = `w-full text-left px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl border transition-all duration-150 flex items-center gap-3.5 cursor-pointer group ${
+                    isSelected 
+                        ? 'bg-indigo-50/90 border-indigo-500 shadow-sm ring-2 ring-indigo-500/20' 
+                        : 'bg-slate-50/70 hover:bg-white border-slate-200/80 hover:border-indigo-300 hover:shadow-sm'
+                }`;
+
+                btn.innerHTML = `
+                    <span class="w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold shrink-0 transition-colors ${
+                        isSelected 
+                            ? 'bg-indigo-600 text-white' 
+                            : 'bg-white text-slate-600 border border-slate-200 group-hover:border-indigo-300 group-hover:text-indigo-600'
+                    }">
+                        ${option.value}
+                    </span>
+                    <span class="text-sm sm:text-base font-medium ${isSelected ? 'text-indigo-950 font-semibold' : 'text-slate-700 group-hover:text-slate-900'}">
+                        ${option.label}
+                    </span>
+                `;
+                answersContainer.appendChild(btn);
+            });
+
+            // Кнопки навігації "Назад" та "Далі / Завершити"
+            document.getElementById('btn-prev').disabled = state.currentIndex === 0;
+            const nextBtn = document.getElementById('btn-next');
+            if (state.currentIndex === total - 1) {
+                nextBtn.textContent = 'Завершити тест ✓';
+                nextBtn.className = 'inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-teal-600 to-indigo-600 hover:from-teal-700 hover:to-indigo-700 shadow-sm transition cursor-pointer';
+            } else {
+                nextBtn.textContent = savedAnswer ? 'Далі →' : 'Пропустити →';
+                nextBtn.className = 'inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-teal-700 bg-teal-50 hover:bg-teal-100 border border-teal-200/70 transition cursor-pointer';
+            }
+
+            // Оновлення лічильника та сітки мапи питань
+            document.getElementById('answered-summary').textContent = `Відповідей: ${answeredCount} з ${total}`;
+            renderQuestionMap();
+        }
+
+        /**
+         * Рендеринг сітки навігації по всіх 60 питаннях
+         */
+        function renderQuestionMap() {
+            const grid = document.getElementById('question-map-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            let hasUnanswered = false;
+
+            state.activeQuestions.forEach((q, idx) => {
+                const isAnswered = Boolean(state.answers[q.id]);
+                const isCurrent = idx === state.currentIndex;
+                if (!isAnswered) hasUnanswered = true;
+
+                const cell = document.createElement('button');
+                cell.type = 'button';
+                cell.textContent = idx + 1;
+                cell.title = isAnswered ? `Питання ${idx + 1}: відповідь ${state.answers[q.id]}` : `Питання ${idx + 1}: без відповіді`;
+                cell.onclick = () => {
+                    state.currentIndex = idx;
+                    renderQuestion();
+                };
+
+                let baseClasses = 'h-8 rounded-lg text-xs font-bold transition flex items-center justify-center cursor-pointer ';
+                if (isAnswered) {
+                    baseClasses += 'bg-teal-500 text-white hover:bg-teal-600 ';
+                } else {
+                    baseClasses += 'bg-slate-100 text-slate-500 hover:bg-slate-200 border border-slate-200/80 ';
+                }
+                if (isCurrent) {
+                    baseClasses += 'ring-2 ring-indigo-600 ring-offset-1 ';
+                }
+
+                cell.className = baseClasses;
+                grid.appendChild(cell);
+            });
+
+            const jumpBtn = document.getElementById('btn-jump-unanswered');
+            if (jumpBtn) {
+                jumpBtn.classList.toggle('hidden', !hasUnanswered);
+            }
+        }
+
+        function toggleQuestionMap() {
+            const panel = document.getElementById('question-map-panel');
+            const chevron = document.getElementById('map-chevron');
+            const isHidden = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden', !isHidden);
+            chevron.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        function jumpToFirstUnanswered() {
+            const firstMissingIdx = state.activeQuestions.findIndex(q => !state.answers[q.id]);
+            if (firstMissingIdx !== -1) {
+                state.currentIndex = firstMissingIdx;
+                renderQuestion();
+            }
+        }
+
+        /**
+         * Обробка вибору відповіді та перехід до наступного питання
+         */
+        function selectAnswer(value) {
+            const currentQ = state.activeQuestions[state.currentIndex];
+            state.answers[currentQ.id] = value;
+
+            // Візуально підсвічуємо вибір на мить перед переходом
+            renderQuestion();
+
+            setTimeout(() => {
+                if (state.currentIndex < state.activeQuestions.length - 1) {
+                    state.currentIndex++;
+                    renderQuestion();
+                } else {
+                    tryFinishTest();
+                }
+            }, 160);
+        }
+
+        function prevQuestion() {
+            if (state.currentIndex > 0) {
+                state.currentIndex--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (state.currentIndex < state.activeQuestions.length - 1) {
+                state.currentIndex++;
+                renderQuestion();
+            } else {
+                tryFinishTest();
+            }
+        }
+
+        /**
+         * Перевірка перед показом результатів: чи всі 60 питань мають відповідь
+         */
+        function tryFinishTest() {
+            const total = state.activeQuestions.length;
+            const missingIndices = [];
+            state.activeQuestions.forEach((q, idx) => {
+                if (!state.answers[q.id]) missingIndices.push(idx + 1);
+            });
+
+            if (missingIndices.length > 0) {
+                const modal = document.getElementById('incomplete-modal');
+                const modalText = document.getElementById('incomplete-modal-text');
+                const previewNums = missingIndices.slice(0, 8).join(', ') + (missingIndices.length > 8 ? '...' : '');
+                modalText.textContent = `Тест ще не пройдено до кінця (залишилось питань без відповіді: ${missingIndices.length} із ${total}, зокрема № ${previewNums}). Будь ласка, поверніться та дайте відповідь на пропущені запитання.`;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                return;
+            }
+
+            calculateAndShowResults();
+        }
+
+        function closeIncompleteModal() {
+            const modal = document.getElementById('incomplete-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function goToUnansweredFromModal() {
+            closeIncompleteModal();
+            // Відкриваємо мапу питань і переходимо на перше пропущене
+            const panel = document.getElementById('question-map-panel');
+            const chevron = document.getElementById('map-chevron');
+            panel.classList.remove('hidden');
+            chevron.style.transform = 'rotate(180deg)';
+            jumpToFirstUnanswered();
+        }
+
+        /**
+         * Обробка вибору відповіді та перехід до наступного питання
+         */
+        function selectAnswer(value) {
+            const currentQ = state.activeQuestions[state.currentIndex];
+            state.answers[currentQ.id] = value;
+
+            // Візуально підсвічуємо вибір на мить перед переходом
+            renderQuestion();
+
+            setTimeout(() => {
+                if (state.currentIndex < state.activeQuestions.length - 1) {
+                    state.currentIndex++;
+                    renderQuestion();
+                } else {
+                    calculateAndShowResults();
+                }
+            }, 160);
+        }
+
+        function prevQuestion() {
+            if (state.currentIndex > 0) {
+                state.currentIndex--;
+                renderQuestion();
+            }
+        }
+
+        /**
+         * Підрахунок результатів (бали за кожною з 20 якостей + домени)
+         */
+        function calculateAndShowResults() {
+            const domainMap = {};
+            TEST_DATA.domains.forEach(d => {
+                domainMap[d.id] = { ...d, rawScore: 0, maxScore: 75 }; // 5 якостей * 3 питання * 5 балів = 75
+            });
+
+            const strengthResults = TEST_DATA.strengths.map(strength => {
+                // Знаходимо всі 3 запитання для цієї сильної сторони
+                const relatedQuestions = TEST_DATA.questions.filter(q => q.strengthId === strength.id);
+                let rawScore = 0;
+                let energyScore = 0;
+
+                relatedQuestions.forEach(q => {
+                    const ans = state.answers[q.id] || 0;
+                    rawScore += ans;
+                    if (q.marker === 'energy') energyScore = ans;
+                });
+
+                const maxPossible = relatedQuestions.length * 5; // 15 балів
+                const percentage = Math.round((rawScore / maxPossible) * 100);
+
+                // Додаємо до загального рахунку домену
+                if (domainMap[strength.domainId]) {
+                    domainMap[strength.domainId].rawScore += rawScore;
+                }
+
+                return {
+                    ...strength,
+                    domain: domainMap[strength.domainId],
+                    rawScore,
+                    maxScore: maxPossible,
+                    percentage,
+                    energyScore // використовується як вторинний критерій при рівності балів
+                };
+            });
+
+            // Сортування: спочатку за загальним балом, при рівності — за балом маркера "Енергія"
+            strengthResults.sort((a, b) => {
+                if (b.rawScore !== a.rawScore) return b.rawScore - a.rawScore;
+                return b.energyScore - a.energyScore;
+            });
+
+            const top5 = strengthResults.slice(0, 5);
+            const domainStats = Object.values(domainMap).map(d => ({
+                ...d,
+                percentage: Math.round((d.rawScore / d.maxScore) * 100)
+            })).sort((a, b) => b.rawScore - a.rawScore);
+
+            state.lastCalculatedResults = {
+                completedAt: new Date().toISOString(),
+                top5: top5.map((item, idx) => ({
+                    rank: idx + 1,
+                    id: item.id,
+                    name: item.name,
+                    domainId: item.domainId,
+                    domainName: item.domain.name,
+                    score: item.rawScore,
+                    maxScore: item.maxScore,
+                    percentage: item.percentage
+                })),
+                allStrengths: strengthResults.map((item, idx) => ({
+                    rank: idx + 1,
+                    id: item.id,
+                    name: item.name,
+                    domainId: item.domainId,
+                    score: item.rawScore,
+                    maxScore: item.maxScore,
+                    percentage: item.percentage
+                })),
+                domains: domainStats.map(d => ({
+                    id: d.id,
+                    name: d.name,
+                    score: d.rawScore,
+                    maxScore: d.maxScore,
+                    percentage: d.percentage
+                })),
+                rawAnswers: state.answers
+            };
+
+            renderResultsUI(top5, strengthResults, domainStats);
+            showScreen('results');
+        }
+
+        /**
+         * Рендеринг екрану результатів
+         */
+        function renderResultsUI(top5, allStrengths, domainStats) {
+            // 1. Картки Топ-5
+            const top5Container = document.getElementById('top5-list');
+            top5Container.innerHTML = '';
+
+            top5.forEach((item, index) => {
+                const rank = index + 1;
+                const card = document.createElement('div');
+                card.className = 'p-4 sm:p-5 rounded-2xl border transition hover:shadow-md';
+                card.style.backgroundColor = item.domain.bgLight;
+                card.style.borderColor = item.domain.borderLight;
+
+                card.innerHTML = `
+                    <div class="flex items-start gap-3.5 sm:gap-4">
+                        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center text-white font-extrabold text-lg shrink-0 shadow-sm" style="background-color: ${item.domain.color};">
+                            ${rank}
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/90 shadow-2xs" style="color: ${item.domain.color};">
+                                    ${item.domain.name}
+                                </span>
+                                <span class="text-xs font-bold text-slate-700 bg-white/80 px-2.5 py-0.5 rounded-lg">
+                                    ${item.percentage}% (${item.rawScore}/${item.maxScore})
+                                </span>
+                            </div>
+                            <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-1.5">
+                                ${item.name}
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+                                ${item.shortDescription}
+                            </p>
+                            <div class="w-full h-2 bg-white/80 rounded-full overflow-hidden">
+                                <div class="h-full rounded-full transition-all duration-700" style="width: ${item.percentage}%; background-color: ${item.domain.color};"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                top5Container.appendChild(card);
+            });
+
+            // 2. Діаграма 4 доменів
+            const domainsContainer = document.getElementById('domains-chart');
+            domainsContainer.innerHTML = '';
+
+            domainStats.forEach(dom => {
+                const div = document.createElement('div');
+                div.className = 'p-4 rounded-2xl bg-slate-50/80 border border-slate-200/70';
+                div.innerHTML = `
+                    <div class="flex items-center justify-between mb-1.5">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full shrink-0" style="background-color: ${dom.color};"></span>
+                            <span class="text-sm font-bold text-slate-800">${dom.name}</span>
+                        </div>
+                        <span class="text-sm font-extrabold" style="color: ${dom.color};">${dom.percentage}%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-slate-200/70 rounded-full overflow-hidden mb-1.5">
+                        <div class="h-full rounded-full transition-all duration-700" style="width: ${dom.percentage}%; background-color: ${dom.color};"></div>
+                    </div>
+                    <div class="text-xs text-slate-400 text-right">${dom.rawScore} з ${dom.maxScore} балів</div>
+                `;
+                domainsContainer.appendChild(div);
+            });
+
+            // 3. Повний список усіх 20 якостей
+            const allListContainer = document.getElementById('all-strengths-list');
+            allListContainer.innerHTML = '';
+
+            allStrengths.forEach((item, index) => {
+                const rank = index + 1;
+                const isTop5 = rank <= 5;
+                const row = document.createElement('div');
+                row.className = 'py-3.5 flex items-center justify-between gap-4';
+                row.innerHTML = `
+                    <div class="flex items-center gap-3 min-w-0">
+                        <span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 ${
+                            isTop5 ? 'text-white' : 'bg-slate-100 text-slate-500'
+                        }" style="${isTop5 ? `background-color: ${item.domain.color};` : ''}">
+                            ${rank}
+                        </span>
+                        <div class="min-w-0">
+                            <div class="text-sm font-semibold text-slate-800 truncate">${item.name}</div>
+                            <div class="text-xs text-slate-400 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full inline-block" style="background-color: ${item.domain.color};"></span>
+                                ${item.domain.name}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="hidden sm:block w-24 h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full" style="width: ${item.percentage}%; background-color: ${item.domain.color};"></div>
+                        </div>
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 w-12 text-right">${item.percentage}%</span>
+                    </div>
+                `;
+                allListContainer.appendChild(row);
+            });
+        }
+
+        /**
+         * Відкриття/закриття акордеона повного рейтингу
+         */
+        function toggleAllStrengths() {
+            const panel = document.getElementById('all-strengths-panel');
+            const icon = document.getElementById('accordion-icon');
+            const isHidden = panel.classList.contains('hidden');
+            
+            if (isHidden) {
+                panel.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                panel.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function resetToStart() {
+            showScreen('start');
+        }
+
+        /**
+         * Експорт JSON-файлів
+         */
+        function triggerJSONDownload(dataObject, filename) {
+            const jsonString = JSON.stringify(dataObject, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast(`Файл "${filename}" успішно завантажено`);
+        }
+
+        function downloadBaseJSON() {
+            triggerJSONDownload(TEST_DATA, 'strengths-test-data.json');
+        }
+
+        function downloadUserResultJSON() {
+            if (!state.lastCalculatedResults) return;
+            const dateStr = new Date().toISOString().slice(0, 10);
+            triggerJSONDownload(state.lastCalculatedResults, `my-top5-strengths-${dateStr}.json`);
+        }
+
+        /**
+         * Допоміжна функція для малювання прямокутника із заокругленими кутами на Canvas
+         */
+        function drawRoundedRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        /**
+         * Генерація та завантаження PNG-картки з Топ-5 сильними сторонами через HTML5 Canvas
+         */
+        function downloadResultPNG() {
+            if (!state.lastCalculatedResults) return;
+
+            try {
+                const canvas = document.getElementById('result-canvas');
+                const ctx = canvas.getContext('2d');
+                const width = 1080;
+                const height = 1350;
+                canvas.width = width;
+                canvas.height = height;
+
+                // 1. Фон картки
+                const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+                bgGrad.addColorStop(0, '#F0FDFA');
+                bgGrad.addColorStop(0.5, '#F8FAFC');
+                bgGrad.addColorStop(1, '#EEF2FF');
+                ctx.fillStyle = bgGrad;
+                ctx.fillRect(0, 0, width, height);
+
+                // Декоративні м'які кола на фоні
+                ctx.fillStyle = 'rgba(20, 184, 166, 0.08)';
+                ctx.beginPath();
+                ctx.arc(140, 160, 260, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = 'rgba(99, 102, 241, 0.08)';
+                ctx.beginPath();
+                ctx.arc(940, 1180, 300, 0, Math.PI * 2);
+                ctx.fill();
+
+                // 2. Біла центральна підкладка
+                ctx.save();
+                ctx.shadowColor = 'rgba(15, 23, 42, 0.08)';
+                ctx.shadowBlur = 40;
+                ctx.shadowOffsetY = 16;
+                drawRoundedRect(ctx, 64, 64, width - 128, height - 128, 44);
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fill();
+                ctx.restore();
+
+                // 3. Шапка картки
+                const userNameInput = document.getElementById('user-name-input');
+                const userName = userNameInput ? userNameInput.value.trim() : '';
+
+                // Бейдж зверху
+                drawRoundedRect(ctx, 120, 124, 340, 44, 22);
+                ctx.fillStyle = '#CCFBF1';
+                ctx.fill();
+                ctx.fillStyle = '#0F766E';
+                ctx.font = '700 20px Inter, sans-serif';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('П\'ЯТІРКА ТАЛАНТІВ • ПРОФІЛЬ', 142, 146);
+
+                // Заголовок
+                ctx.fillStyle = '#0F172A';
+                ctx.font = '800 54px Inter, sans-serif';
+                ctx.textBaseline = 'alphabetic';
+                const titleText = userName ? `Топ-5 сильних сторін: ${userName}` : 'Мої Топ-5 сильних сторін';
+                // Обрізаємо занадто довгий заголовок за потреби
+                let displayTitle = titleText;
+                while (ctx.measureText(displayTitle).width > width - 240 && displayTitle.length > 10) {
+                    displayTitle = displayTitle.slice(0, -4) + '...';
+                }
+                ctx.fillText(displayTitle, 120, 240);
+
+                ctx.fillStyle = '#64748B';
+                ctx.font = '500 26px Inter, sans-serif';
+                ctx.fillText('Природні таланти, які дають найбільше енергії та ефективності', 120, 286);
+
+                // 4. Картки Топ-5
+                const domainMap = {};
+                TEST_DATA.domains.forEach(d => { domainMap[d.id] = d; });
+
+                const startY = 340;
+                const cardHeight = 152;
+                const gap = 22;
+
+                state.lastCalculatedResults.top5.forEach((item, index) => {
+                    const y = startY + index * (cardHeight + gap);
+                    const dom = domainMap[item.domainId] || { color: '#4F46E5', bgLight: '#EEF2FF', borderLight: '#C7D2FE', name: item.domainName };
+
+                    // Фон картки якості
+                    drawRoundedRect(ctx, 120, y, width - 240, cardHeight, 28);
+                    ctx.fillStyle = dom.bgLight;
+                    ctx.fill();
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = dom.borderLight;
+                    ctx.stroke();
+
+                    // Квадрат з номером (1..5)
+                    drawRoundedRect(ctx, 148, y + 36, 80, 80, 22);
+                    ctx.fillStyle = dom.color;
+                    ctx.fill();
+
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.font = '800 38px Inter, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(String(index + 1), 188, y + 76);
+
+                    // Назва домену та відсоток
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = dom.color;
+                    ctx.font = '700 21px Inter, sans-serif';
+                    ctx.fillText(dom.name.toUpperCase(), 254, y + 48);
+
+                    // Назва сильної сторони
+                    ctx.fillStyle = '#0F172A';
+                    ctx.font = '700 31px Inter, sans-serif';
+                    let strengthTitle = item.name;
+                    while (ctx.measureText(strengthTitle).width > width - 510 && strengthTitle.length > 10) {
+                        strengthTitle = strengthTitle.slice(0, -4) + '...';
+                    }
+                    ctx.fillText(strengthTitle, 254, y + 92);
+
+                    // Прогрес-бар всередині картки
+                    const barX = 254;
+                    const barY = y + 118;
+                    const barW = width - 520;
+                    const barH = 12;
+                    drawRoundedRect(ctx, barX, barY, barW, barH, 6);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+                    ctx.fill();
+
+                    const fillW = Math.max(24, Math.round((item.percentage / 100) * barW));
+                    drawRoundedRect(ctx, barX, barY, fillW, barH, 6);
+                    ctx.fillStyle = dom.color;
+                    ctx.fill();
+
+                    // Відсоток справа
+                    ctx.textAlign = 'right';
+                    ctx.fillStyle = '#1E293B';
+                    ctx.font = '800 32px Inter, sans-serif';
+                    ctx.fillText(`${item.percentage}%`, width - 152, y + 78);
+                });
+
+                // 5. Нижній колонтитул картки
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'alphabetic';
+                ctx.fillStyle = '#94A3B8';
+                ctx.font = '500 22px Inter, sans-serif';
+                const dateFormatted = new Date().toLocaleDateString('uk-UA');
+                ctx.fillText(`Дата тестування: ${dateFormatted}`, 120, height - 108);
+
+                ctx.textAlign = 'right';
+                ctx.fillStyle = '#64748B';
+                ctx.font = '600 22px Inter, sans-serif';
+                ctx.fillText('П\'ятірка Талантів • Позитивна психологія', width - 120, height - 108);
+
+                // Завантаження PNG файлу
+                canvas.toBlob((blob) => {
+                    if (!blob) {
+                        showToast('Не вдалося сформувати картинку');
+                        return;
+                    }
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    const dateStr = new Date().toISOString().slice(0, 10);
+                    a.href = url;
+                    a.download = `my-top5-strengths-${dateStr}.png`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showToast('Картинку результату (PNG) збережено!');
+                }, 'image/png');
+            } catch (err) {
+                console.error(err);
+                showToast('Помилка при створенні картинки');
+            }
+        }
+
+        /**
+         * Спливаюче сповіщення (замість alert)
+         */
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        /**
+         * Підтримка клавіш 1–5 та стрілок вліво/вправо під час проходження тесту
+         */
+        document.addEventListener('keydown', (e) => {
+            const quizScreen = document.getElementById('screen-quiz');
+            if (quizScreen.classList.contains('hidden')) return;
+            const modal = document.getElementById('incomplete-modal');
+            if (!modal.classList.contains('hidden')) return;
+
+            if (['1', '2', '3', '4', '5'].includes(e.key)) {
+                selectAnswer(parseInt(e.key, 10));
+            } else if (e.key === 'ArrowLeft') {
+                prevQuestion();
+            } else if (e.key === 'ArrowRight') {
+                nextQuestion();
+            }
+        });
+    </script>
+</body>
+</html>
